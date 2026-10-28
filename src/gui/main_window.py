@@ -197,6 +197,7 @@ class MainWindow:
         # Tray Icon setup
         self.tray_icon = None
         self._setup_tray()
+        self.roblox_updates_enabled = True
 
     def _on_window_changed(self, *args, **kwargs):
         """Callback for resized events to track normal size."""
@@ -346,3 +347,6 @@ class MainWindow:
                     window.maximize()
 
         webview.start(on_start, self.window, debug=False)
+            def toggle_roblox_updates(self, enabled):
+     self.roblox_updates_enabled = bool(enabled)
+     return self.roblox_updates_enabled
